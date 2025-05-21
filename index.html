@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Web Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    .project-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    section {
+      display: none;
+      padding: 20px 40px;
+      background: white;
+      margin: 0 auto 40px;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Web Projects</h1>
+  <div class="project-links">
+    <div class="card" onclick="showSection('portfolio')">📁 Personal Portfolio</div>
+    <div class="card" onclick="showSection('todo')">📝 To-Do List App</div>
+    <div class="card" onclick="showSection('products')">🛍️ Product Listing Page</div>
+  </div>
+
+  <section id="portfolio">
+    <h2>Personal Portfolio</h2>
+    <iframe src="portfolio.html"></iframe>
+  </section>
+
+  <section id="todo">
+    <h2>To-Do List App</h2>
+    <iframe src="to-do.html"></iframe>
+  </section>
+
+  <section id="products">
+    <h2>Product Listing Page</h2>
+    <iframe src="productlist.html"></iframe>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
